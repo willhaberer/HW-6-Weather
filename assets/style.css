@@ -1,0 +1,18 @@
+header {
+  font-size: 70px;
+  font-weight: 700;
+  text-align: center;
+  color: #ffffff;
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 44, 91, 1) 25%,
+    rgba(108, 171, 221, 1) 100%
+  );
+  margin-bottom: 2rem;
+}
+
+.main-dash {
+  border: black solid 1px;
+}
