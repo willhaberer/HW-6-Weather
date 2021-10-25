@@ -19,4 +19,21 @@ header {
 
 ul {
   list-style: none;
+  text-align: left;
+  padding-left: 8px;
+  margin-left: 8px;
+}
+
+ul li {
+  margin: 3px;
+}
+
+.card {
+  padding-left: 0;
+  margin: 5px;
+}
+
+.card-body {
+  padding-left: 0;
+  margin-left: 0;
 }
