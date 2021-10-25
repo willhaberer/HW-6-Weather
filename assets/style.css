@@ -16,3 +16,7 @@ header {
 .main-dash {
   border: black solid 1px;
 }
+
+ul {
+  list-style: none;
+}
