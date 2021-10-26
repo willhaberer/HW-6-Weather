@@ -45,7 +45,12 @@ seaBtn.addEventListener("click", function () {
   currentCity = "Seattle";
   getWeather(currentCity);
 });
-
+var searchBtn = document.querySelector("#search");
+searchBtn.addEventListener("click", function () {
+  var searchCity = document.getElementById("city-input");
+  getWeather(searchCity.value);
+  console.log("here is seach city " + searchCity.value);
+});
 //Global Variables
 var apiKey = "6af492900db892592abaa92efa28260e";
 var todaysDate = moment().format;
