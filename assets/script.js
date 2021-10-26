@@ -20,7 +20,7 @@ var fullURL = requestURL + currentCity + urlAPI;
 var fiveDayRequestURL =
   "https://api.openweathermap.org/data/2.5/forecast/daily?q=";
 var fiveDayAPIKey = "26d8cd665198a335a455e347f59024fc";
-var fiveDayCount = "&cnt=5";
+var fiveDayCount = "&cnt=3";
 var fiveDayFullURL =
   fiveDayRequestURL + currentCity + fiveDayCount + fiveDayAPIKey;
 
