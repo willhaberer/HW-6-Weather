@@ -46,6 +46,22 @@ ul li {
   padding-left: 12px;
 }
 
+.search-area {
+  border-bottom: solid black 2px;
+}
+
+.search-btn {
+  padding: 7px;
+  margin: 5px;
+  background: linear-gradient(
+    90deg,
+    rgb(110, 103, 247) 0%,
+    rgb(90, 122, 216) 25%,
+    rgba(108, 171, 221, 1) 100%
+  );
+  color: white;
+}
+
 .city-button {
   padding: 7px;
   margin: 5px;
