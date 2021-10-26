@@ -2,6 +2,7 @@
 var cityInfo = document.querySelector("#city");
 var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
+var humidity = document.querySelector("#humidity");
 var c1 = document.querySelector("#c1");
 var c2 = document.querySelector("#c2");
 var c3 = document.querySelector("#c3");
@@ -16,6 +17,13 @@ var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
 var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
 var fullURL = requestURL + currentCity + urlAPI;
 
+var fiveDayRequestURL =
+  "https://api.openweathermap.org/data/2.5/forecast/daily?q=";
+var fiveDayAPIKey = "26d8cd665198a335a455e347f59024fc";
+var fiveDayCount = "&cnt=5";
+var fiveDayFullURL =
+  fiveDayRequestURL + currentCity + fiveDayCount + fiveDayAPIKey;
+
 function getWeather() {
   $.ajax({
     url: fullURL,
@@ -24,8 +32,10 @@ function getWeather() {
     console.log(response);
     temp.textContent = " " + Math.floor(response.main.temp);
     wind.textContent = " " + response.wind.speed + " MPH";
+    humidity.textContent = " " + response.main.humidity + " %";
   });
 }
+
 function get5Days() {
   for (var i = 1; i < 6; i++) {
     if (i === 1) {
@@ -42,6 +52,16 @@ function get5Days() {
   }
 }
 
+function update5DayForecast() {
+  $.ajax({
+    url: fiveDayFullURL,
+    method: "GET",
+  }).then(function (response) {
+    console.log(response);
+  });
+}
+
 getWeather();
 get5Days();
+update5DayForecast();
 cityInfo.textContent = currentCity;
