@@ -37,3 +37,11 @@ ul li {
   padding-left: 0;
   margin-left: 0;
 }
+
+#c1,
+#c2,
+#c3,
+#c4,
+#c5 {
+  padding-left: 12px;
+}
