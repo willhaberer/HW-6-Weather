@@ -8,14 +8,51 @@ var c2 = document.querySelector("#c2");
 var c3 = document.querySelector("#c3");
 var c4 = document.querySelector("#c4");
 var c5 = document.querySelector("#c5");
+var currentCity = "Atlanta";
+//buttons
+var atlBtn = document.querySelector("#atlanta");
+atlBtn.addEventListener("click", function () {
+  currentCity = "Atlanta";
+  getWeather(currentCity);
+});
+var ausBtn = document.querySelector("#austin");
+ausBtn.addEventListener("click", function () {
+  currentCity = "Austin";
+  getWeather(currentCity);
+});
+var chiBtn = document.querySelector("#chicago");
+chiBtn.addEventListener("click", function () {
+  currentCity = "Chicago";
+  getWeather(currentCity);
+});
+var denBtn = document.querySelector("#denver");
+denBtn.addEventListener("click", function () {
+  currentCity = "Denver";
+  getWeather(currentCity);
+});
+var nshBtn = document.querySelector("#nashville");
+nshBtn.addEventListener("click", function () {
+  currentCity = "Nashville";
+  getWeather(currentCity);
+});
+var orlBtn = document.querySelector("#orlando");
+orlBtn.addEventListener("click", function () {
+  currentCity = "Orlando";
+  getWeather(currentCity);
+});
+var seaBtn = document.querySelector("#seattle");
+seaBtn.addEventListener("click", function () {
+  currentCity = "Seattle";
+  getWeather(currentCity);
+});
 
 //Global Variables
 var apiKey = "6af492900db892592abaa92efa28260e";
 var todaysDate = moment().format;
 var currentCity = "Atlanta";
-var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
-var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
-var fullURL = requestURL + currentCity + urlAPI;
+// var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+// var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
+// var fullURL = requestURL + currentCity + urlAPI;
 
 var fiveDayRequestURL =
   "https://api.openweathermap.org/data/2.5/forecast/daily?q=";
@@ -24,13 +61,19 @@ var fiveDayCount = "&cnt=3";
 var fiveDayFullURL =
   fiveDayRequestURL + currentCity + fiveDayCount + fiveDayAPIKey;
 
-function getWeather() {
+function getWeather(city) {
+  currentCity = city;
+  var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
+  var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
+  var fullURL = requestURL + currentCity + urlAPI;
+
   $.ajax({
     url: fullURL,
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    temp.textContent = " " + Math.floor(response.main.temp);
+    cityInfo.textContent = city;
+    temp.textContent = " " + Math.floor(response.main.temp) + "\xB0" + "F";
     wind.textContent = " " + response.wind.speed + " MPH";
     humidity.textContent = " " + response.main.humidity + " %";
   });
@@ -61,7 +104,6 @@ function update5DayForecast() {
   });
 }
 
-getWeather();
+getWeather(currentCity);
 get5Days();
 update5DayForecast();
-cityInfo.textContent = currentCity;
