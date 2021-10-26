@@ -45,3 +45,15 @@ ul li {
 #c5 {
   padding-left: 12px;
 }
+
+.city-button {
+  padding: 7px;
+  margin: 5px;
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(28, 44, 91, 1) 25%,
+    rgba(108, 171, 221, 1) 100%
+  );
+  color: white;
+}
