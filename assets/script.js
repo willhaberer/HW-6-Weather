@@ -71,7 +71,7 @@ function getWeather(city) {
   currentCity = city;
   var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
   var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
-  var fullURL = requestURL + currentCity + urlAPI + apiKey;
+  var fullURL = requestURL + currentCity + urlAPI;
 
   $.ajax({
     url: fullURL,
