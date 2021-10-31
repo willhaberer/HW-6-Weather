@@ -61,16 +61,17 @@ var currentCity = "Atlanta";
 
 var fiveDayRequestURL =
   "https://api.openweathermap.org/data/2.5/forecast/daily?q=";
-var fiveDayAPIKey = "26d8cd665198a335a455e347f59024fc";
-var fiveDayCount = "&cnt=3";
+var fiveDayAPIKey = "0c567f8a43f5aa7a347b1b6a12fca740";
+var fiveDayCount = "&cnt=5&units=imperial";
+var appID = "&appid=";
 var fiveDayFullURL =
-  fiveDayRequestURL + currentCity + fiveDayCount + fiveDayAPIKey;
+  fiveDayRequestURL + currentCity + fiveDayCount + appID + fiveDayAPIKey;
 
 function getWeather(city) {
   currentCity = city;
   var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
   var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
-  var fullURL = requestURL + currentCity + urlAPI;
+  var fullURL = requestURL + currentCity + urlAPI + apiKey;
 
   $.ajax({
     url: fullURL,
@@ -101,6 +102,7 @@ function get5Days() {
 }
 
 function update5DayForecast() {
+  console.log("running 5 day functions");
   $.ajax({
     url: fiveDayFullURL,
     method: "GET",
