@@ -73,7 +73,7 @@ searchBtn.addEventListener("click", function () {
   var searchCity = document.getElementById("city-input");
   getWeather(searchCity.value);
   update5DayForecast(searchCity.value);
-  console.log("here is seach city " + searchCity.value);
+  handlePastSearch(searchCity.value);
 });
 
 //Global Variables
@@ -119,7 +119,6 @@ function get5Days() {
 }
 
 function update5DayForecast(currentCity) {
-  console.log("running 5 day functions");
   var fiveDayRequestURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
   var fiveDayAPIKey = "0c567f8a43f5aa7a347b1b6a12fca740";
   var appID = "&units=imperial&appid=";
@@ -150,6 +149,13 @@ function update5DayForecast(currentCity) {
     c4humidity.textContent = " " + response.list[3].main.humidity + "%";
     c5humidity.textContent = " " + response.list[4].main.humidity + "%";
   });
+}
+const searchArr = [];
+function handlePastSearch(searchCity) {
+  if (searchArr.length < 10) {
+    searchArr.unshift(searchCity);
+    console.log(searchArr);
+  }
 }
 
 getWeather(currentCity);
