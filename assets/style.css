@@ -50,6 +50,9 @@ ul li {
   border-bottom: solid black 2px;
 }
 
+input {
+  width: 10rem;
+}
 .search-btn {
   padding: 7px;
   margin: 5px;
