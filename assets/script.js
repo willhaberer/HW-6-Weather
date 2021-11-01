@@ -152,7 +152,11 @@ function update5DayForecast(currentCity) {
 }
 const searchArr = [];
 function handlePastSearch(searchCity) {
-  if (searchArr.length < 10) {
+  if (searchArr.length < 8) {
+    searchArr.unshift(searchCity);
+    console.log(searchArr);
+  } else {
+    searchArr.pop();
     searchArr.unshift(searchCity);
     console.log(searchArr);
   }
