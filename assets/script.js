@@ -13,6 +13,16 @@ var c2temp = document.querySelector("#c2temp");
 var c3temp = document.querySelector("#c3temp");
 var c4temp = document.querySelector("#c4temp");
 var c5temp = document.querySelector("#c5temp");
+var c1wind = document.querySelector("#c1wind");
+var c2wind = document.querySelector("#c2wind");
+var c3wind = document.querySelector("#c3wind");
+var c4wind = document.querySelector("#c4wind");
+var c5wind = document.querySelector("#c5wind");
+var c1humidity = document.querySelector("#c1humidity");
+var c2humidity = document.querySelector("#c2humidity");
+var c3humidity = document.querySelector("#c3humidity");
+var c4humidity = document.querySelector("#c4humidity");
+var c5humidity = document.querySelector("#c5humidity");
 var currentCity = "Atlanta";
 //buttons
 var atlBtn = document.querySelector("#atlanta");
@@ -109,8 +119,26 @@ function update5DayForecast(currentCity) {
     method: "GET",
   }).then(function (response) {
     console.log(response);
-    c1temp.textContent = response.list[0].main.temp;
-    console.log(c1temp.textContent);
+    c1temp.textContent =
+      " " + Math.floor(response.list[0].main.temp) + "\xB0" + "F";
+    c2temp.textContent =
+      " " + Math.floor(response.list[1].main.temp) + "\xB0" + "F";
+    c3temp.textContent =
+      " " + Math.floor(response.list[2].main.temp) + "\xB0" + "F";
+    c4temp.textContent =
+      " " + Math.floor(response.list[3].main.temp) + "\xB0" + "F";
+    c5temp.textContent =
+      " " + Math.floor(response.list[4].main.temp) + "\xB0" + "F";
+    c1wind.textContent = " " + response.list[0].wind.speed + " MPH";
+    c2wind.textContent = " " + response.list[1].wind.speed + " MPH";
+    c3wind.textContent = " " + response.list[2].wind.speed + " MPH";
+    c4wind.textContent = " " + response.list[3].wind.speed + " MPH";
+    c5wind.textContent = " " + response.list[4].wind.speed + " MPH";
+    c1humidity.textContent = " " + response.list[0].main.humidity + " %";
+    c2humidity.textContent = " " + response.list[1].main.humidity + " %";
+    c3humidity.textContent = " " + response.list[2].main.humidity + " %";
+    c4humidity.textContent = " " + response.list[3].main.humidity + " %";
+    c5humidity.textContent = " " + response.list[4].main.humidity + " %";
   });
 }
 
