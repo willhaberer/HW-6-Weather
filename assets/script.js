@@ -158,8 +158,9 @@ function handlePastSearch(searchCity) {
   }
   if (searchArr.length < 8) {
     searchArr.unshift(searchCity);
-    for (let i = 0; i < searchArr.length - 1; i++) {
+    for (let i = 0; i < searchArr.length; i++) {
       var buttons = $("<button>" + searchArr[i] + "</button>");
+      buttons.addClass("city-button");
       buttons.appendTo("#past-search");
     }
   } else {
