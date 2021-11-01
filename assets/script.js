@@ -151,14 +151,24 @@ function update5DayForecast(currentCity) {
   });
 }
 const searchArr = [];
+
 function handlePastSearch(searchCity) {
+  if (searchArr.length > 0) {
+    $("#past-search").empty();
+  }
   if (searchArr.length < 8) {
     searchArr.unshift(searchCity);
-    console.log(searchArr);
+    for (let i = 0; i < searchArr.length - 1; i++) {
+      var buttons = $("<button>" + searchArr[i] + "</button>");
+      buttons.appendTo("#past-search");
+    }
   } else {
     searchArr.pop();
     searchArr.unshift(searchCity);
-    console.log(searchArr);
+    for (let i = 0; i < searchArr.length - 1; i++) {
+      var buttons = $("<button>" + searchArr[i] + "</button>");
+      buttons.appendTo("#past-search");
+    }
   }
 }
 
