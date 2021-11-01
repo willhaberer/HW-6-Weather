@@ -29,41 +29,49 @@ var atlBtn = document.querySelector("#atlanta");
 atlBtn.addEventListener("click", function () {
   currentCity = "Atlanta";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var ausBtn = document.querySelector("#austin");
 ausBtn.addEventListener("click", function () {
   currentCity = "Austin";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var chiBtn = document.querySelector("#chicago");
 chiBtn.addEventListener("click", function () {
   currentCity = "Chicago";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var denBtn = document.querySelector("#denver");
 denBtn.addEventListener("click", function () {
   currentCity = "Denver";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var nshBtn = document.querySelector("#nashville");
 nshBtn.addEventListener("click", function () {
   currentCity = "Nashville";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var orlBtn = document.querySelector("#orlando");
 orlBtn.addEventListener("click", function () {
   currentCity = "Orlando";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var seaBtn = document.querySelector("#seattle");
 seaBtn.addEventListener("click", function () {
   currentCity = "Seattle";
   getWeather(currentCity);
+  update5DayForecast(currentCity);
 });
 var searchBtn = document.querySelector("#search");
 searchBtn.addEventListener("click", function () {
   var searchCity = document.getElementById("city-input");
   getWeather(searchCity.value);
+  update5DayForecast(searchCity.value);
   console.log("here is seach city " + searchCity.value);
 });
 //Global Variables
