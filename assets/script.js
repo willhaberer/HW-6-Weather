@@ -8,6 +8,11 @@ var c2 = document.querySelector("#c2");
 var c3 = document.querySelector("#c3");
 var c4 = document.querySelector("#c4");
 var c5 = document.querySelector("#c5");
+var c1temp = document.querySelector("#c1temp");
+var c2temp = document.querySelector("#c2temp");
+var c3temp = document.querySelector("#c3temp");
+var c4temp = document.querySelector("#c4temp");
+var c5temp = document.querySelector("#c5temp");
 var currentCity = "Atlanta";
 //buttons
 var atlBtn = document.querySelector("#atlanta");
@@ -59,13 +64,6 @@ var currentCity = "Atlanta";
 // var urlAPI = "&units=imperial&appid=6af492900db892592abaa92efa28260e";
 // var fullURL = requestURL + currentCity + urlAPI;
 
-var fiveDayRequestURL =
-  "https://api.openweathermap.org/data/2.5/forecast/daily?q=";
-var fiveDayAPIKey = "26d8cd665198a335a455e347f59024fc";
-var fiveDayCount = "&cnt=3";
-var fiveDayFullURL =
-  fiveDayRequestURL + currentCity + fiveDayCount + fiveDayAPIKey;
-
 function getWeather(city) {
   currentCity = city;
   var requestURL = "https://api.openweathermap.org/data/2.5/weather?q=";
@@ -100,15 +98,22 @@ function get5Days() {
   }
 }
 
-function update5DayForecast() {
+function update5DayForecast(currentCity) {
+  console.log("running 5 day functions");
+  var fiveDayRequestURL = "https://api.openweathermap.org/data/2.5/forecast?q=";
+  var fiveDayAPIKey = "0c567f8a43f5aa7a347b1b6a12fca740";
+  var appID = "&units=imperial&appid=";
+  var fiveDayFullURL = fiveDayRequestURL + currentCity + appID + fiveDayAPIKey;
   $.ajax({
     url: fiveDayFullURL,
     method: "GET",
   }).then(function (response) {
     console.log(response);
+    c1temp.textContent = response.list[0].main.temp;
+    console.log(c1temp.textContent);
   });
 }
 
 getWeather(currentCity);
 get5Days();
-update5DayForecast();
+update5DayForecast(currentCity);
