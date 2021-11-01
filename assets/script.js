@@ -96,7 +96,7 @@ function getWeather(city) {
     cityInfo.textContent = city;
     temp.textContent = " " + Math.floor(response.main.temp) + "\xB0" + "F";
     wind.textContent = " " + response.wind.speed + " MPH";
-    humidity.textContent = " " + response.main.humidity + " %";
+    humidity.textContent = " " + response.main.humidity + "%";
   });
 }
 
@@ -142,11 +142,11 @@ function update5DayForecast(currentCity) {
     c3wind.textContent = " " + response.list[2].wind.speed + " MPH";
     c4wind.textContent = " " + response.list[3].wind.speed + " MPH";
     c5wind.textContent = " " + response.list[4].wind.speed + " MPH";
-    c1humidity.textContent = " " + response.list[0].main.humidity + " %";
-    c2humidity.textContent = " " + response.list[1].main.humidity + " %";
-    c3humidity.textContent = " " + response.list[2].main.humidity + " %";
-    c4humidity.textContent = " " + response.list[3].main.humidity + " %";
-    c5humidity.textContent = " " + response.list[4].main.humidity + " %";
+    c1humidity.textContent = " " + response.list[0].main.humidity + "%";
+    c2humidity.textContent = " " + response.list[1].main.humidity + "%";
+    c3humidity.textContent = " " + response.list[2].main.humidity + "%";
+    c4humidity.textContent = " " + response.list[3].main.humidity + "%";
+    c5humidity.textContent = " " + response.list[4].main.humidity + "%";
   });
 }
 
