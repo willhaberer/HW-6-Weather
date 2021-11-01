@@ -76,6 +76,13 @@ searchBtn.addEventListener("click", function () {
   handlePastSearch(searchCity.value);
 });
 
+// function citySearch() {
+//   var searchCity = document.getElementById("city-input");
+//   getWeather(searchCity.value);
+//   update5DayForecast(searchCity.value);
+//   handlePastSearch(searchCity.value);
+// }
+
 //Global Variables
 var apiKey = "6af492900db892592abaa92efa28260e";
 var todaysDate = moment().format;
@@ -159,7 +166,14 @@ function handlePastSearch(searchCity) {
   if (searchArr.length < 8) {
     searchArr.unshift(searchCity);
     for (let i = 0; i < searchArr.length; i++) {
-      var buttons = $("<button>" + searchArr[i] + "</button>");
+      var buttons = $("<button>" + searchArr[i] + "</button>").click(
+        function () {
+          var searchCity = document.getElementById("city-input");
+          getWeather(searchCity.value);
+          update5DayForecast(searchCity.value);
+          handlePastSearch(searchCity.value);
+        }
+      );
       buttons.addClass("city-button");
       buttons.appendTo("#past-search");
     }
@@ -167,7 +181,15 @@ function handlePastSearch(searchCity) {
     searchArr.pop();
     searchArr.unshift(searchCity);
     for (let i = 0; i < searchArr.length - 1; i++) {
-      var buttons = $("<button>" + searchArr[i] + "</button>");
+      var buttons = $("<button>" + searchArr[i] + "</button>").click(
+        function () {
+          var searchCity = document.getElementById("city-input");
+          getWeather(searchCity.value);
+          update5DayForecast(searchCity.value);
+          handlePastSearch(searchCity.value);
+        }
+      );
+      buttons.addClass("city-button");
       buttons.appendTo("#past-search");
     }
   }
