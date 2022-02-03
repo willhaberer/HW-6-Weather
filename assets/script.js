@@ -24,6 +24,7 @@ var c2humidity = document.querySelector("#c2humidity");
 var c3humidity = document.querySelector("#c3humidity");
 var c4humidity = document.querySelector("#c4humidity");
 var c5humidity = document.querySelector("#c5humidity");
+var c1emoji = document.querySelector("#c1emoji");
 var currentCity = "Atlanta";
 
 var searchBtn = document.querySelector("#search");
@@ -103,6 +104,7 @@ function update5DayForecast(currentCity) {
     c3humidity.textContent = " " + response.list[2].main.humidity + "%";
     c4humidity.textContent = " " + response.list[3].main.humidity + "%";
     c5humidity.textContent = " " + response.list[4].main.humidity + "%";
+    c1emoji.src = getEmoji(response.list[0].weather[0].description);
   });
 }
 const searchArr = [];

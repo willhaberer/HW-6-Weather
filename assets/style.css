@@ -78,10 +78,13 @@ input {
 }
 
 #emoji,
-#city {
+#city,
+#c1emoji,
+#c1 {
   display: inline-block;
 }
 
-#emoji-#city {
+#emoji-#city,
+#c1emoji-#c1 {
   vertical-align: middle;
 }
