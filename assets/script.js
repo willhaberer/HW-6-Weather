@@ -25,6 +25,10 @@ var c3humidity = document.querySelector("#c3humidity");
 var c4humidity = document.querySelector("#c4humidity");
 var c5humidity = document.querySelector("#c5humidity");
 var c1emoji = document.querySelector("#c1emoji");
+var c2emoji = document.querySelector("#c2emoji");
+var c3emoji = document.querySelector("#c3emoji");
+var c4emoji = document.querySelector("#c4emoji");
+var c5emoji = document.querySelector("#c5emoji");
 var currentCity = "Atlanta";
 
 var searchBtn = document.querySelector("#search");
@@ -105,6 +109,10 @@ function update5DayForecast(currentCity) {
     c4humidity.textContent = " " + response.list[3].main.humidity + "%";
     c5humidity.textContent = " " + response.list[4].main.humidity + "%";
     c1emoji.src = getEmoji(response.list[0].weather[0].description);
+    c2emoji.src = getEmoji(response.list[1].weather[0].description);
+    c3emoji.src = getEmoji(response.list[2].weather[0].description);
+    c4emoji.src = getEmoji(response.list[3].weather[0].description);
+    c5emoji.src = getEmoji(response.list[4].weather[0].description);
   });
 }
 const searchArr = [];
