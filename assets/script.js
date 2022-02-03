@@ -165,12 +165,18 @@ function getEmoji(desc) {
     src = "./assets/emojis/rain.png";
   } else if (desc === "light rain") {
     src = "./assets/emojis/rain.png";
+  } else if (desc === "scattered clouds") {
+    src = "./assets/emojis/partialClouds.png";
   } else if (desc === "broken clouds") {
     src = "./assets/emojis/partialClouds.png";
   } else if (desc === "snow") {
     src = "./assets/emojis/snowing.png";
+  } else if (desc === "light snow") {
+    src = "./assets/emojis/snowing.png";
   } else if (desc === "few clouds") {
     src = "./assets/emojis/partialClouds.png";
+  } else if (desc === "clear sky") {
+    src = "./assets/emojis/sunny.png";
   } else {
     src = "./assets/emojis/sunny.png";
   }
