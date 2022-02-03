@@ -12,7 +12,7 @@ Users can search any city that openweather API supports. Additionally this dashb
 
 ## Usage
 
-The live page can be found at:https://willhaberer.github.io/HW-6-Weather/
+The live page can be found at: https://willhaberer.github.io/Weather-Dashboard/
 
 ## Mock-Up
 
