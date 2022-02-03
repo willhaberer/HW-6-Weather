@@ -76,3 +76,12 @@ input {
   );
   color: white;
 }
+
+#emoji,
+#city {
+  display: inline-block;
+}
+
+#emoji-#city {
+  vertical-align: middle;
+}

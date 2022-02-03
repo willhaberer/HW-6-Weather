@@ -3,6 +3,7 @@ var cityInfo = document.querySelector("#city");
 var temp = document.querySelector("#temp");
 var wind = document.querySelector("#wind");
 var humidity = document.querySelector("#humidity");
+var emoji = document.querySelector("#emoji");
 var c1 = document.querySelector("#c1");
 var c2 = document.querySelector("#c2");
 var c3 = document.querySelector("#c3");
@@ -52,6 +53,7 @@ function getWeather(city) {
     temp.textContent = " " + Math.floor(response.main.temp) + "\xB0" + "F";
     wind.textContent = " " + response.wind.speed + " MPH";
     humidity.textContent = " " + response.main.humidity + "%";
+    emoji.src = getEmoji(response.weather[0].description);
   });
 }
 
@@ -139,6 +141,14 @@ function handlePastSearch(searchCity) {
       buttons.appendTo("#past-search");
     }
   }
+}
+
+function getEmoji(desc) {
+  let src;
+  if (desc === "mist") {
+    src = "./assets/emojis/foggy.png";
+  }
+  return src;
 }
 
 getWeather(currentCity);
