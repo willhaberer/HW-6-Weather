@@ -80,11 +80,23 @@ input {
 #emoji,
 #city,
 #c1emoji,
-#c1 {
+#c1,
+#c2emoji,
+#c2,
+#c3emoji,
+#c3,
+#c4emoji,
+#c4,
+#c5,
+#c5emoji {
   display: inline-block;
 }
 
 #emoji-#city,
-#c1emoji-#c1 {
+#c1emoji-#c1,
+#c2emoji-#c2,
+#c3emoji-#c3,
+#c4emoji-#c4,
+#c5emoji-#c5 {
   vertical-align: middle;
 }
