@@ -147,7 +147,22 @@ function getEmoji(desc) {
   let src;
   if (desc === "mist") {
     src = "./assets/emojis/foggy.png";
+  } else if (desc === "fog") {
+    src = "./assets/emojis/foggy.png";
+  } else if (desc === "overcast clouds") {
+    src = "./assets/emojis/overcast.png";
+  } else if (desc === "moderate rain") {
+    src = "./assets/emojis/rain.png";
+  } else if (desc === "light rain") {
+    src = "./assets/emojis/rain.png";
+  } else if (desc === "broken clouds") {
+    src = "./assets/emojis/partialClouds.png";
+  } else if (desc === "few clouds") {
+    src = "./assets/emojis/partialClouds.png";
+  } else {
+    src = "./assets/emojis/sunny.png";
   }
+
   return src;
 }
 
